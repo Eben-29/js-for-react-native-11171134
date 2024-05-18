@@ -35,10 +35,24 @@ function formatArrayStrings(strings, numbers) {
 }
 // example
 let numbers = [1, 2, 3, 4, 5];
-let strings = ["Watermelon", "Banana", "Cherry", "Pineapple", "Apple"];
+let strings = ["Brown", "Robert", "Roland", "Divine", "Eugenia"];
 
 let processedNumbers = processArray(numbers);
 console.log('Processed Numbers:', processedNumbers); 
 
 let formattedStrings = formatArrayStrings(strings, processedNumbers);
 console.log('Formatted Strings:', formattedStrings);
+
+// task 3
+function createUserProfiles(names, modifiedNames) {
+  if (names.length !== modifiedNames.length) {
+      throw new Error('The length of the names array must match the length of the modifiedNames array.');
+  }
+
+  return names.map((name, index) => ({
+      id: index + 1,
+      originalName: name,
+      modifiedName: modifiedNames[index]
+  }));
+}
+
